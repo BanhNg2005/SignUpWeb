@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <form id="signup">
+            <h1>Sign Up</h1>
+            <div>
+                <label for="firstname">First Name: </label>
+                <input type="text" id="firstname" placeholder="Enter your first name">
+                <small></small>
+            </div>
+            <div>
+                <label for="lastname">Last Name: </label>
+                <input type="text" id="lastname" placeholder="Enter your last name">
+                <small></small>
+            </div>
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" id="email" placeholder="Enter your email address">
+                <small></small>
+            </div>
+            <div>
+                <label for="postal">Postal Code: </label>
+                <input type="text" id="postal" placeholder="Enter your postal code">
+                <small></small>
+            </div>
+            <label for="citylist">City: </label>
+            <select id="citylist">
+                <option>Select your city</option>
+                <option>Quebec City</option>
+                <option>New York</option>
+                <option>Houston</option>
+                <option>Los Angeles</option>
+            </select>
+            <input id="removeCityButton" type="button" onclick="remove_add_city()" value="Remove City"> <br>
+            <small></small>
+            <div>
+                <label for="password">Password: </label>
+                <input type="password" placeholder="Enter your password" id="passwordInput"><br>
+                <input type="checkbox" id="toggleVisibility">
+                <label for="toggleVisibility">Show password</label> 
+                <small></small>
+                
+            </div>
+            <div>
+                <label for="password2">Confirm Password: </label>
+                <input type="password" placeholder="Re-enter your password" id="password2Input"><br>
+                <input type="checkbox" id="toggleVisibility2">
+                <label for="toggleVisibility2">Show password</label> 
+                <small></small>
+            </div>
+            <button id="buttonSubmit" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
