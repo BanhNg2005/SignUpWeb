@@ -96,6 +96,11 @@
     border-radius: 4px;
   }
 
+  input[type="password"]::-ms-reveal,
+input[type="password"]::-webkit-reveal {
+    display: none;
+}
+
   input[type="checkbox"]{
     margin-left: 5px;
   }
@@ -243,4 +248,20 @@
   }
   .error {
     color: red;
+}
+.password-wrapper {
+  position: relative;
+  
+}
+
+#toggleVisibility, #toggleVisibility2 {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(-50%); 
+
 }

@@ -120,6 +120,24 @@ function validateRetypePassword(input, originalPassword, requiredMsg, mismatchMs
   const toggleVisibility = document.getElementById("toggleVisibility");
   const password2Input = document.getElementById("password2Input");
   const toggleVisibility2 = document.getElementById("toggleVisibility2");
+  
+// function to toggle password visibility
+  function togglePasswords() {
+    const passwordInput = document.getElementById('passwordInput');
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+    } else {
+        passwordInput.type = "password";
+    }
+}
+function togglePasswords2() {
+  const password2Input = document.getElementById('password2Input');
+  if (password2Input.type === "password") {
+      password2Input.type = "text";
+  } else {
+      password2Input.type = "password";
+  }
+}
 
   toggleVisibility.addEventListener("change", function () {
     if (toggleVisibility.checked) {
@@ -159,7 +177,7 @@ toggleVisibility2.addEventListener("change", function () {
                 Password: ${form.elements["passwordInput"].value.trim()}
             `;
             let finalConfirmation = confirm(data + " \n Do you want to download your data information?");  
-            
+              
             if (finalConfirmation) {
                 let blob = new Blob([data], { type: 'text/plain' });
                 let url = URL.createObjectURL(blob);
@@ -169,11 +187,6 @@ toggleVisibility2.addEventListener("change", function () {
                 a.click();
             }
         }
-    }
-    // if the form is not valid, show an error message
-    else {
-        alert("Please fill in the form correctly!");
-        event.preventDefault();
     }
   }
 );
