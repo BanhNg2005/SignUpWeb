@@ -62,11 +62,16 @@ function validatePostalCode(input, requiredMsg, invalidMsg) {
   return true;
 }
 
+// function to remove and add city
+let cityIndex = 0;
+const cities = ['Toronto', 'Laval', 'Vancouver', 'Brossard', "Calgary", "Edmonton", "Ottawa", "Montreal"];
+
 function remove_add_city() {
   const cityDropdown = document.getElementById('citylist');
   const selectedCity = cityDropdown.options[cityDropdown.selectedIndex];
-  selectedCity.value = 'Toronto';
-  selectedCity.text = 'Toronto';
+  selectedCity.value = cities[cityIndex];
+  selectedCity.text = cities[cityIndex];
+  cityIndex = (cityIndex + 1) % cities.length;
 }
    
 // function to validate password
@@ -83,6 +88,8 @@ function remove_add_city() {
 }
   return true;
 }
+
+
 // function to validate retype password
 function validateRetypePassword(input, originalPassword, requiredMsg, mismatchMsg) {
   if (!hasValue(input, requiredMsg)) {
