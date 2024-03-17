@@ -251,7 +251,6 @@ input[type="password"]::-webkit-reveal {
 }
 .password-wrapper {
   position: relative;
-  
 }
 
 #toggleVisibility, #toggleVisibility2 {
@@ -263,5 +262,4 @@ input[type="password"]::-webkit-reveal {
   justify-content: center;
   cursor: pointer;
   transform: translateY(-50%); 
-
 }
