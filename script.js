@@ -73,6 +73,14 @@ function remove_add_city() {
   selectedCity.text = cities[cityIndex];
   cityIndex = (cityIndex + 1) % cities.length;
 }
+
+// function to validate city
+function validateCity(input, message) {
+  if (input.value === "Select your city") {
+    return showError(input, message);
+  }
+  return showSuccess(input);
+}
    
 // function to validate password
   function validatePassword(input, requiredMsg, invalidMsg) {
@@ -113,6 +121,7 @@ function validateRetypePassword(input, originalPassword, requiredMsg, mismatchMs
   const EMAIL_INVALID = "Please enter a correct email address format!";
   const POSTAL_REQUIRED = "Please enter your postal code!";
   const POSTAL_INVALID = "Please enter a valid postal code!";
+  const CITY_REQUIRED = "Please select a city!";
   const PASSWORD_REQUIRED = "Please enter a password!";
   const PASSWORD_MISMATCH = "The passwords do not match!";
   const PASSWORD_INVALID = "The password must be AT LEAST 6 characters, at least one number, one capital and one special character!";
@@ -161,11 +170,12 @@ toggleVisibility2.addEventListener("change", function () {
     let lastnameValid = hasValue(form.elements["lastname"], LASTNAME_REQUIRED);
     let emailValid = validateEmail(form.elements["email"], EMAIL_REQUIRED, EMAIL_INVALID);
     let postalValid = validatePostalCode(form.elements["postal"], POSTAL_REQUIRED, POSTAL_INVALID);
+    let cityValid = validateCity(form.elements["citylist"], CITY_REQUIRED);
     let passwordValid = validatePassword(document.getElementById("passwordInput"), PASSWORD_REQUIRED, PASSWORD_INVALID);
     let password2Valid = validateRetypePassword(document.getElementById("password2Input"), document.getElementById("passwordInput"), PASSWORD_REQUIRED, PASSWORD_MISMATCH);
 
       // submit the form if all the validations are successful
-      if (firstnameValid && lastnameValid && emailValid && postalValid && passwordValid && password2Valid) {
+      if (firstnameValid && lastnameValid && emailValid && postalValid && cityValid && passwordValid && password2Valid) {
         let confirmation = confirm("Are you sure you want to submit the form?");
         if (confirmation) {
             let data = `
