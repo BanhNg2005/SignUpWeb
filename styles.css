@@ -256,7 +256,7 @@ input[type="password"]::-webkit-reveal {
 #toggleVisibility, #toggleVisibility2 {
   position: absolute;
   right: 10px;
-  top: 50px;
+  top: 53px;
   align-items: center;
   display: flex;
   justify-content: center;
